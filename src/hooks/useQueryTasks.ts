@@ -11,6 +11,7 @@ export const useQueryTasks = () => {
   }
   return useQuery<Task[]>('tasks', getTasks, {
     staleTime: 0,
+    refetchOnWindowFocus: true
     // refetchInterval: 5000
   })
 }

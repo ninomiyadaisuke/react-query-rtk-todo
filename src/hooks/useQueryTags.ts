@@ -10,8 +10,7 @@ export const useQueryTags = () => {
     return data
   }
   return useQuery<Tag[]>('tags', getTags, {
-    staleTime: 60000,
+    staleTime: Infinity,
   }
-
   )
 }
