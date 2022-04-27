@@ -1,11 +1,11 @@
 import { FC, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ChevronDoubleRightIcon } from '@heroicons/react/solid'
 import { TaskListMemo } from './TaskList'
 import { TaskEditMemo } from './TaskEdit'
 
 export const MainTask: FC = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const [text, setText] = useState('')
   console.log('rendered MainTask')
   return (
@@ -23,7 +23,7 @@ export const MainTask: FC = () => {
         <TaskEditMemo />
       </div>
       <ChevronDoubleRightIcon
-        onClick={() => history.push('/tags')}
+        onClick={() => navigate('/tags')}
         className="h-5 w-5 mt-2 text-blue-500 cursor-pointer"
       />
       <p>Tag page</p>

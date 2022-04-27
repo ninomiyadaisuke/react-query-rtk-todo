@@ -10,6 +10,7 @@ export const useQueryTasks = () => {
     return data
   }
   return useQuery<Task[]>('tasks', getTasks, {
-    staleTime: 0
+    staleTime: 0,
+    // refetchInterval: 5000
   })
 }
