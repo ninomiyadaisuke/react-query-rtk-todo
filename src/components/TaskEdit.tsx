@@ -5,9 +5,7 @@ import { useQueryTags } from '../hooks/useQueryTags'
 import { useMutateTask } from '../hooks/useMutateTask'
 
 const TaskEdit: FC = () => {
-  const editedTask = useAppSelector(selectTask)
-  console.log(editedTask);
-  
+  const editedTask = useAppSelector(selectTask)  
   const dispatch = useAppDispatch()
   const { status, data } = useQueryTags()
   const { createTaskMutation, updateTaskMutation } = useMutateTask()
@@ -67,4 +65,4 @@ const TaskEdit: FC = () => {
   )
 }
 
-export default TaskEdit
+export const TaskEditMemo = memo(TaskEdit)

@@ -9,7 +9,7 @@ interface Props {
   task: Task
 }
 
-export const TaskItem: FC<Props> = ({ task }) => {
+const TaskItem: FC<Props> = ({ task }) => {
   const dispatch = useAppDispatch()
   const { deleteTaskMutation } = useMutateTask()
   console.log('rendered TaskItem')
@@ -23,6 +23,7 @@ export const TaskItem: FC<Props> = ({ task }) => {
         {' : '}
         {task.tag_name}
       </span>
+
       <div className="flex float-right ml-20">
         <PencilAltIcon
           className="h-5 w-5 mx-1 text-blue-500 cursor-pointer"
@@ -46,3 +47,4 @@ export const TaskItem: FC<Props> = ({ task }) => {
     </li>
   )
 }
+export const TaskItemMemo = memo(TaskItem)
