@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { ChevronDoubleRightIcon } from '@heroicons/react/solid'
 import { TaskList } from './TaskList'
+import  TaskEdit  from './TaskEdit'
 
 export const MainTask: FC = () => {
   const history = useHistory()
@@ -19,6 +20,7 @@ export const MainTask: FC = () => {
       <p className="mb-10 text-xl font-bold">Tasks</p>
       <div className="grid grid-cols-2 gap-40">
         <TaskList />
+        <TaskEdit/>
       </div>
       <ChevronDoubleRightIcon
         onClick={() => history.push('/tags')}
